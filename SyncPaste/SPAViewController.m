@@ -76,12 +76,16 @@
 }
 
 - (IBAction)pressedAdd:(id)sender {
-    NSString *clipData = @"test";
-    
-    DBRecord *theClipRow = [self.clipTbl insert:@{ @"type": @"text", @"data": clipData, @"created": [NSDate dateWithTimeIntervalSinceNow:0] }];
-    [self.dataStore sync:nil];
-    
-    [self reload];
+    NSString *clipData = [UIPasteboard generalPasteboard].string;
+    if(clipData && ![clipData isEqualToString:@""]) {
+        DBRecord *theClipRow = [self.clipTbl insert:@{ @"type": @"text", @"data": clipData, @"created": [NSDate dateWithTimeIntervalSinceNow:0] }];
+        [self.dataStore sync:nil];
+        
+        [self reload];
+    }
+    else {
+        NSLog(@"No data");
+    }
 }
 
 - (IBAction)pressedLogout:(id)sender {

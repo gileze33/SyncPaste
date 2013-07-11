@@ -7,12 +7,20 @@
 //
 
 #import "SPAAppDelegate.h"
+#import <Dropbox/Dropbox.h>
 
 @implementation SPAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:24/255.0f green:83/255.0f blue:109/255.0f alpha:1.0f]];
+    
+    DBAccountManager* accountMgr =
+    [[DBAccountManager alloc] initWithAppKey:@"1bk8j66dsextk4j" secret:@"t4bnllw0sso8hq6"];
+    [DBAccountManager setSharedManager:accountMgr];
+    
     return YES;
 }
 							
@@ -42,5 +50,27 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url
+  sourceApplication:(NSString *)source annotation:(id)annotation {
+    DBAccount *account = [[DBAccountManager sharedManager] handleOpenURL:url];
+    if (account) {
+        NSLog(@"App linked successfully!");
+        
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"loginStateChanged"
+         object:nil];
+        
+        [self.window.rootViewController dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+        
+        return YES;
+    }
+    return NO;
+}
+
 
 @end

@@ -19,6 +19,15 @@
 		1F5C3361178F334900F30FE8 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C335F178F334900F30FE8 /* MainStoryboard_iPhone.storyboard */; };
 		1F5C3364178F334900F30FE8 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C3362178F334900F30FE8 /* MainStoryboard_iPad.storyboard */; };
 		1F5C3367178F334900F30FE8 /* SPAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C3366178F334900F30FE8 /* SPAViewController.m */; };
+		1F5C336E178F336F00F30FE8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5C336D178F336F00F30FE8 /* CFNetwork.framework */; };
+		1F5C3370178F337500F30FE8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5C336F178F337500F30FE8 /* Security.framework */; };
+		1F5C3372178F337A00F30FE8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5C3371178F337A00F30FE8 /* SystemConfiguration.framework */; };
+		1F5C3374178F337F00F30FE8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5C3373178F337F00F30FE8 /* QuartzCore.framework */; };
+		1F5C3376178F338B00F30FE8 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5C3375178F338B00F30FE8 /* libc++.dylib */; };
+		1F5C3378178F343900F30FE8 /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5C3377178F343900F30FE8 /* Dropbox.framework */; };
+		1F5C337C178F360500F30FE8 /* SyncPasteBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C337A178F360500F30FE8 /* SyncPasteBG.png */; };
+		1F5C337D178F360500F30FE8 /* SyncPasteBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C337B178F360500F30FE8 /* SyncPasteBG@2x.png */; };
+		1F5C3381178F37F200F30FE8 /* SPALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C337F178F37F200F30FE8 /* SPALoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +48,16 @@
 		1F5C3363178F334900F30FE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		1F5C3365178F334900F30FE8 /* SPAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPAViewController.h; sourceTree = "<group>"; };
 		1F5C3366178F334900F30FE8 /* SPAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPAViewController.m; sourceTree = "<group>"; };
+		1F5C336D178F336F00F30FE8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1F5C336F178F337500F30FE8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1F5C3371178F337A00F30FE8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1F5C3373178F337F00F30FE8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1F5C3375178F338B00F30FE8 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		1F5C3377178F343900F30FE8 /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dropbox.framework; path = Dependancies/Dropbox.framework; sourceTree = "<group>"; };
+		1F5C337A178F360500F30FE8 /* SyncPasteBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SyncPasteBG.png; sourceTree = "<group>"; };
+		1F5C337B178F360500F30FE8 /* SyncPasteBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SyncPasteBG@2x.png"; sourceTree = "<group>"; };
+		1F5C337E178F37F200F30FE8 /* SPALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPALoginViewController.h; sourceTree = "<group>"; };
+		1F5C337F178F37F200F30FE8 /* SPALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPALoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +65,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F5C3376178F338B00F30FE8 /* libc++.dylib in Frameworks */,
+				1F5C3374178F337F00F30FE8 /* QuartzCore.framework in Frameworks */,
+				1F5C3372178F337A00F30FE8 /* SystemConfiguration.framework in Frameworks */,
+				1F5C3370178F337500F30FE8 /* Security.framework in Frameworks */,
+				1F5C336E178F336F00F30FE8 /* CFNetwork.framework in Frameworks */,
 				1F5C3348178F334900F30FE8 /* UIKit.framework in Frameworks */,
 				1F5C334A178F334900F30FE8 /* Foundation.framework in Frameworks */,
 				1F5C334C178F334900F30FE8 /* CoreGraphics.framework in Frameworks */,
+				1F5C3378178F343900F30FE8 /* Dropbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +83,11 @@
 		1F5C333B178F334900F30FE8 = {
 			isa = PBXGroup;
 			children = (
+				1F5C3375178F338B00F30FE8 /* libc++.dylib */,
+				1F5C3373178F337F00F30FE8 /* QuartzCore.framework */,
+				1F5C3371178F337A00F30FE8 /* SystemConfiguration.framework */,
+				1F5C336F178F337500F30FE8 /* Security.framework */,
+				1F5C336D178F336F00F30FE8 /* CFNetwork.framework */,
 				1F5C334D178F334900F30FE8 /* SyncPaste */,
 				1F5C3346178F334900F30FE8 /* Frameworks */,
 				1F5C3345178F334900F30FE8 /* Products */,
@@ -91,6 +121,8 @@
 				1F5C3362178F334900F30FE8 /* MainStoryboard_iPad.storyboard */,
 				1F5C3365178F334900F30FE8 /* SPAViewController.h */,
 				1F5C3366178F334900F30FE8 /* SPAViewController.m */,
+				1F5C337E178F37F200F30FE8 /* SPALoginViewController.h */,
+				1F5C337F178F37F200F30FE8 /* SPALoginViewController.m */,
 				1F5C334E178F334900F30FE8 /* Supporting Files */,
 			);
 			path = SyncPaste;
@@ -99,6 +131,8 @@
 		1F5C334E178F334900F30FE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F5C3379178F360500F30FE8 /* Artwork */,
+				1F5C3377178F343900F30FE8 /* Dropbox.framework */,
 				1F5C334F178F334900F30FE8 /* SyncPaste-Info.plist */,
 				1F5C3350178F334900F30FE8 /* InfoPlist.strings */,
 				1F5C3353178F334900F30FE8 /* main.m */,
@@ -108,6 +142,15 @@
 				1F5C335D178F334900F30FE8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F5C3379178F360500F30FE8 /* Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				1F5C337A178F360500F30FE8 /* SyncPasteBG.png */,
+				1F5C337B178F360500F30FE8 /* SyncPasteBG@2x.png */,
+			);
+			path = Artwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +211,8 @@
 				1F5C335E178F334900F30FE8 /* Default-568h@2x.png in Resources */,
 				1F5C3361178F334900F30FE8 /* MainStoryboard_iPhone.storyboard in Resources */,
 				1F5C3364178F334900F30FE8 /* MainStoryboard_iPad.storyboard in Resources */,
+				1F5C337C178F360500F30FE8 /* SyncPasteBG.png in Resources */,
+				1F5C337D178F360500F30FE8 /* SyncPasteBG@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +226,7 @@
 				1F5C3354178F334900F30FE8 /* main.m in Sources */,
 				1F5C3358178F334900F30FE8 /* SPAAppDelegate.m in Sources */,
 				1F5C3367178F334900F30FE8 /* SPAViewController.m in Sources */,
+				1F5C3381178F37F200F30FE8 /* SPALoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +321,10 @@
 		1F5C336B178F334900F30FE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SyncPaste/Dependancies\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyncPaste/SyncPaste-Prefix.pch";
 				INFOPLIST_FILE = "SyncPaste/SyncPaste-Info.plist";
@@ -286,6 +336,10 @@
 		1F5C336C178F334900F30FE8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SyncPaste/Dependancies\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyncPaste/SyncPaste-Prefix.pch";
 				INFOPLIST_FILE = "SyncPaste/SyncPaste-Info.plist";

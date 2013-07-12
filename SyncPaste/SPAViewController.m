@@ -8,6 +8,7 @@
 
 #import "SPAViewController.h"
 #import "SPALoginViewController.h"
+#import "WBSuccessNoticeView.h"
 
 @interface SPAViewController ()
 
@@ -24,6 +25,10 @@
     self.clips = [[NSArray alloc] init];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginStateChanged) name:@"loginStateChanged" object:nil];
+    
+    self.refresh = [[UIRefreshControl alloc] init];
+    [self.refresh addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refresh];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -68,11 +73,13 @@
 }
 
 - (void)reload {
+    
     if(self.loggedIn) {
         [self.dataStore sync:nil];
         self.clips = [self.clipTbl query:@{  } error:nil];
     }
     [self.tableView reloadData];
+    [self.refresh endRefreshing];
 }
 
 - (IBAction)pressedAdd:(id)sender {
@@ -85,6 +92,8 @@
     }
     else {
         NSLog(@"No data");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No data in clipboard" message:@"Copy some text from another app and then press the + button" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+        [alert show];
     }
 }
 
@@ -124,7 +133,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ClipCell"];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] init];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"ClipCell"];
     }
     
     if(indexPath.row < self.clips.count) {
@@ -133,12 +142,29 @@
         if([clip[@"type"] isEqualToString:@"text"]) {
             cell.textLabel.text = clip[@"data"];
         }
+        
+        NSDate *created = (NSDate *)clip[@"created"];
+        long timestamp_diff = abs([created timeIntervalSinceNow]);
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", timestamp_diff];
     }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(indexPath.row < self.clips.count) {
+        DBRecord *clip = [self.clips objectAtIndex:indexPath.row];
+        
+        if([clip[@"type"] isEqualToString:@"text"]) {
+            UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+            pasteboard.string = clip[@"data"];
+            
+            WBSuccessNoticeView *notice = [WBSuccessNoticeView successNoticeInView:self.view title:@"Copied text to clipboard"];
+            [notice show];
+        }
+    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -146,6 +172,10 @@
 - (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return(YES);
+}
+
+- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
 }
 
 @end

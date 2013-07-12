@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Dropbox/Dropbox.h>
 
-@interface SPAViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SPAViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property bool firstAppear;
 @property bool loggedIn;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UIRefreshControl *refresh;
 @property (retain) DBDatastore *dataStore;
 @property (retain) DBTable *clipTbl;
 @property (retain) NSArray *clips;

@@ -28,6 +28,17 @@
 		1F5C337C178F360500F30FE8 /* SyncPasteBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C337A178F360500F30FE8 /* SyncPasteBG.png */; };
 		1F5C337D178F360500F30FE8 /* SyncPasteBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C337B178F360500F30FE8 /* SyncPasteBG@2x.png */; };
 		1F5C3381178F37F200F30FE8 /* SPALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C337F178F37F200F30FE8 /* SPALoginViewController.m */; };
+		1FF3C6E9178F5CB500640C63 /* NoticeView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1FF3C6D3178F5CB500640C63 /* NoticeView.bundle */; };
+		1FF3C6EA178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6D5178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.m */; };
+		1FF3C6EB178F5CB500640C63 /* UILabel+WBExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6D7178F5CB500640C63 /* UILabel+WBExtensions.m */; };
+		1FF3C6EC178F5CB500640C63 /* WBBlueGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6D9178F5CB500640C63 /* WBBlueGradientView.m */; };
+		1FF3C6ED178F5CB500640C63 /* WBErrorNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6DB178F5CB500640C63 /* WBErrorNoticeView.m */; };
+		1FF3C6EE178F5CB500640C63 /* WBGrayGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6DD178F5CB500640C63 /* WBGrayGradientView.m */; };
+		1FF3C6EF178F5CB500640C63 /* WBNoticeOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6DF178F5CB500640C63 /* WBNoticeOperation.m */; };
+		1FF3C6F0178F5CB500640C63 /* WBNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6E2178F5CB500640C63 /* WBNoticeView.m */; };
+		1FF3C6F1178F5CB500640C63 /* WBRedGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6E4178F5CB500640C63 /* WBRedGradientView.m */; };
+		1FF3C6F2178F5CB500640C63 /* WBStickyNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6E6178F5CB500640C63 /* WBStickyNoticeView.m */; };
+		1FF3C6F3178F5CB500640C63 /* WBSuccessNoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6E8178F5CB500640C63 /* WBSuccessNoticeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +69,28 @@
 		1F5C337B178F360500F30FE8 /* SyncPasteBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SyncPasteBG@2x.png"; sourceTree = "<group>"; };
 		1F5C337E178F37F200F30FE8 /* SPALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPALoginViewController.h; sourceTree = "<group>"; };
 		1F5C337F178F37F200F30FE8 /* SPALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPALoginViewController.m; sourceTree = "<group>"; };
+		1FF3C6D3178F5CB500640C63 /* NoticeView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NoticeView.bundle; sourceTree = "<group>"; };
+		1FF3C6D4178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+WBNoticeExtensions.h"; sourceTree = "<group>"; };
+		1FF3C6D5178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+WBNoticeExtensions.m"; sourceTree = "<group>"; };
+		1FF3C6D6178F5CB500640C63 /* UILabel+WBExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+WBExtensions.h"; sourceTree = "<group>"; };
+		1FF3C6D7178F5CB500640C63 /* UILabel+WBExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WBExtensions.m"; sourceTree = "<group>"; };
+		1FF3C6D8178F5CB500640C63 /* WBBlueGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBBlueGradientView.h; sourceTree = "<group>"; };
+		1FF3C6D9178F5CB500640C63 /* WBBlueGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBlueGradientView.m; sourceTree = "<group>"; };
+		1FF3C6DA178F5CB500640C63 /* WBErrorNoticeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBErrorNoticeView.h; sourceTree = "<group>"; };
+		1FF3C6DB178F5CB500640C63 /* WBErrorNoticeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBErrorNoticeView.m; sourceTree = "<group>"; };
+		1FF3C6DC178F5CB500640C63 /* WBGrayGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBGrayGradientView.h; sourceTree = "<group>"; };
+		1FF3C6DD178F5CB500640C63 /* WBGrayGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBGrayGradientView.m; sourceTree = "<group>"; };
+		1FF3C6DE178F5CB500640C63 /* WBNoticeOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNoticeOperation.h; sourceTree = "<group>"; };
+		1FF3C6DF178F5CB500640C63 /* WBNoticeOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNoticeOperation.m; sourceTree = "<group>"; };
+		1FF3C6E0178F5CB500640C63 /* WBNoticeView+ForSubclassEyesOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBNoticeView+ForSubclassEyesOnly.h"; sourceTree = "<group>"; };
+		1FF3C6E1178F5CB500640C63 /* WBNoticeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNoticeView.h; sourceTree = "<group>"; };
+		1FF3C6E2178F5CB500640C63 /* WBNoticeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNoticeView.m; sourceTree = "<group>"; };
+		1FF3C6E3178F5CB500640C63 /* WBRedGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBRedGradientView.h; sourceTree = "<group>"; };
+		1FF3C6E4178F5CB500640C63 /* WBRedGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBRedGradientView.m; sourceTree = "<group>"; };
+		1FF3C6E5178F5CB500640C63 /* WBStickyNoticeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBStickyNoticeView.h; sourceTree = "<group>"; };
+		1FF3C6E6178F5CB500640C63 /* WBStickyNoticeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBStickyNoticeView.m; sourceTree = "<group>"; };
+		1FF3C6E7178F5CB500640C63 /* WBSuccessNoticeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSuccessNoticeView.h; sourceTree = "<group>"; };
+		1FF3C6E8178F5CB500640C63 /* WBSuccessNoticeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSuccessNoticeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +164,7 @@
 		1F5C334E178F334900F30FE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1FF3C6D2178F5CB500640C63 /* WBNoticeView */,
 				1F5C3379178F360500F30FE8 /* Artwork */,
 				1F5C3377178F343900F30FE8 /* Dropbox.framework */,
 				1F5C334F178F334900F30FE8 /* SyncPaste-Info.plist */,
@@ -151,6 +185,36 @@
 				1F5C337B178F360500F30FE8 /* SyncPasteBG@2x.png */,
 			);
 			path = Artwork;
+			sourceTree = "<group>";
+		};
+		1FF3C6D2178F5CB500640C63 /* WBNoticeView */ = {
+			isa = PBXGroup;
+			children = (
+				1FF3C6D3178F5CB500640C63 /* NoticeView.bundle */,
+				1FF3C6D4178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.h */,
+				1FF3C6D5178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.m */,
+				1FF3C6D6178F5CB500640C63 /* UILabel+WBExtensions.h */,
+				1FF3C6D7178F5CB500640C63 /* UILabel+WBExtensions.m */,
+				1FF3C6D8178F5CB500640C63 /* WBBlueGradientView.h */,
+				1FF3C6D9178F5CB500640C63 /* WBBlueGradientView.m */,
+				1FF3C6DA178F5CB500640C63 /* WBErrorNoticeView.h */,
+				1FF3C6DB178F5CB500640C63 /* WBErrorNoticeView.m */,
+				1FF3C6DC178F5CB500640C63 /* WBGrayGradientView.h */,
+				1FF3C6DD178F5CB500640C63 /* WBGrayGradientView.m */,
+				1FF3C6DE178F5CB500640C63 /* WBNoticeOperation.h */,
+				1FF3C6DF178F5CB500640C63 /* WBNoticeOperation.m */,
+				1FF3C6E0178F5CB500640C63 /* WBNoticeView+ForSubclassEyesOnly.h */,
+				1FF3C6E1178F5CB500640C63 /* WBNoticeView.h */,
+				1FF3C6E2178F5CB500640C63 /* WBNoticeView.m */,
+				1FF3C6E3178F5CB500640C63 /* WBRedGradientView.h */,
+				1FF3C6E4178F5CB500640C63 /* WBRedGradientView.m */,
+				1FF3C6E5178F5CB500640C63 /* WBStickyNoticeView.h */,
+				1FF3C6E6178F5CB500640C63 /* WBStickyNoticeView.m */,
+				1FF3C6E7178F5CB500640C63 /* WBSuccessNoticeView.h */,
+				1FF3C6E8178F5CB500640C63 /* WBSuccessNoticeView.m */,
+			);
+			name = WBNoticeView;
+			path = Dependancies/WBNoticeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +277,7 @@
 				1F5C3364178F334900F30FE8 /* MainStoryboard_iPad.storyboard in Resources */,
 				1F5C337C178F360500F30FE8 /* SyncPasteBG.png in Resources */,
 				1F5C337D178F360500F30FE8 /* SyncPasteBG@2x.png in Resources */,
+				1FF3C6E9178F5CB500640C63 /* NoticeView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +292,16 @@
 				1F5C3358178F334900F30FE8 /* SPAAppDelegate.m in Sources */,
 				1F5C3367178F334900F30FE8 /* SPAViewController.m in Sources */,
 				1F5C3381178F37F200F30FE8 /* SPALoginViewController.m in Sources */,
+				1FF3C6EA178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.m in Sources */,
+				1FF3C6EB178F5CB500640C63 /* UILabel+WBExtensions.m in Sources */,
+				1FF3C6EC178F5CB500640C63 /* WBBlueGradientView.m in Sources */,
+				1FF3C6ED178F5CB500640C63 /* WBErrorNoticeView.m in Sources */,
+				1FF3C6EE178F5CB500640C63 /* WBGrayGradientView.m in Sources */,
+				1FF3C6EF178F5CB500640C63 /* WBNoticeOperation.m in Sources */,
+				1FF3C6F0178F5CB500640C63 /* WBNoticeView.m in Sources */,
+				1FF3C6F1178F5CB500640C63 /* WBRedGradientView.m in Sources */,
+				1FF3C6F2178F5CB500640C63 /* WBStickyNoticeView.m in Sources */,
+				1FF3C6F3178F5CB500640C63 /* WBSuccessNoticeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +442,7 @@
 				1F5C336C178F334900F30FE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

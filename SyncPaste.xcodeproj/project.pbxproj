@@ -28,6 +28,10 @@
 		1F5C337C178F360500F30FE8 /* SyncPasteBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C337A178F360500F30FE8 /* SyncPasteBG.png */; };
 		1F5C337D178F360500F30FE8 /* SyncPasteBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C337B178F360500F30FE8 /* SyncPasteBG@2x.png */; };
 		1F5C3381178F37F200F30FE8 /* SPALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C337F178F37F200F30FE8 /* SPALoginViewController.m */; };
+		1FDB39F01790BD2A00419D9E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDB39EE1790BD2A00419D9E /* libTestFlight.a */; };
+		1FDB39F21790BD5D00419D9E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FDB39F11790BD5D00419D9E /* libz.dylib */; };
+		1FDB39F51790C3C200419D9E /* SyncPasteBGiPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FDB39F31790C3C200419D9E /* SyncPasteBGiPad.png */; };
+		1FDB39F61790C3C200419D9E /* SyncPasteBGiPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FDB39F41790C3C200419D9E /* SyncPasteBGiPad@2x.png */; };
 		1FF3C6E9178F5CB500640C63 /* NoticeView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1FF3C6D3178F5CB500640C63 /* NoticeView.bundle */; };
 		1FF3C6EA178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6D5178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.m */; };
 		1FF3C6EB178F5CB500640C63 /* UILabel+WBExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3C6D7178F5CB500640C63 /* UILabel+WBExtensions.m */; };
@@ -69,6 +73,11 @@
 		1F5C337B178F360500F30FE8 /* SyncPasteBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SyncPasteBG@2x.png"; sourceTree = "<group>"; };
 		1F5C337E178F37F200F30FE8 /* SPALoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPALoginViewController.h; sourceTree = "<group>"; };
 		1F5C337F178F37F200F30FE8 /* SPALoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPALoginViewController.m; sourceTree = "<group>"; };
+		1FDB39EE1790BD2A00419D9E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Dependancies/libTestFlight.a; sourceTree = "<group>"; };
+		1FDB39EF1790BD2A00419D9E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = Dependancies/TestFlight.h; sourceTree = "<group>"; };
+		1FDB39F11790BD5D00419D9E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1FDB39F31790C3C200419D9E /* SyncPasteBGiPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SyncPasteBGiPad.png; sourceTree = "<group>"; };
+		1FDB39F41790C3C200419D9E /* SyncPasteBGiPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SyncPasteBGiPad@2x.png"; sourceTree = "<group>"; };
 		1FF3C6D3178F5CB500640C63 /* NoticeView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NoticeView.bundle; sourceTree = "<group>"; };
 		1FF3C6D4178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+WBNoticeExtensions.h"; sourceTree = "<group>"; };
 		1FF3C6D5178F5CB500640C63 /* NSOperationQueue+WBNoticeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+WBNoticeExtensions.m"; sourceTree = "<group>"; };
@@ -98,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FDB39F21790BD5D00419D9E /* libz.dylib in Frameworks */,
 				1F5C3376178F338B00F30FE8 /* libc++.dylib in Frameworks */,
 				1F5C3374178F337F00F30FE8 /* QuartzCore.framework in Frameworks */,
 				1F5C3372178F337A00F30FE8 /* SystemConfiguration.framework in Frameworks */,
@@ -107,6 +117,7 @@
 				1F5C334A178F334900F30FE8 /* Foundation.framework in Frameworks */,
 				1F5C334C178F334900F30FE8 /* CoreGraphics.framework in Frameworks */,
 				1F5C3378178F343900F30FE8 /* Dropbox.framework in Frameworks */,
+				1FDB39F01790BD2A00419D9E /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +127,7 @@
 		1F5C333B178F334900F30FE8 = {
 			isa = PBXGroup;
 			children = (
+				1FDB39F11790BD5D00419D9E /* libz.dylib */,
 				1F5C3375178F338B00F30FE8 /* libc++.dylib */,
 				1F5C3373178F337F00F30FE8 /* QuartzCore.framework */,
 				1F5C3371178F337A00F30FE8 /* SystemConfiguration.framework */,
@@ -164,6 +176,8 @@
 		1F5C334E178F334900F30FE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1FDB39EE1790BD2A00419D9E /* libTestFlight.a */,
+				1FDB39EF1790BD2A00419D9E /* TestFlight.h */,
 				1FF3C6D2178F5CB500640C63 /* WBNoticeView */,
 				1F5C3379178F360500F30FE8 /* Artwork */,
 				1F5C3377178F343900F30FE8 /* Dropbox.framework */,
@@ -181,6 +195,8 @@
 		1F5C3379178F360500F30FE8 /* Artwork */ = {
 			isa = PBXGroup;
 			children = (
+				1FDB39F31790C3C200419D9E /* SyncPasteBGiPad.png */,
+				1FDB39F41790C3C200419D9E /* SyncPasteBGiPad@2x.png */,
 				1F5C337A178F360500F30FE8 /* SyncPasteBG.png */,
 				1F5C337B178F360500F30FE8 /* SyncPasteBG@2x.png */,
 			);
@@ -278,6 +294,8 @@
 				1F5C337C178F360500F30FE8 /* SyncPasteBG.png in Resources */,
 				1F5C337D178F360500F30FE8 /* SyncPasteBG@2x.png in Resources */,
 				1FF3C6E9178F5CB500640C63 /* NoticeView.bundle in Resources */,
+				1FDB39F51790C3C200419D9E /* SyncPasteBGiPad.png in Resources */,
+				1FDB39F61790C3C200419D9E /* SyncPasteBGiPad@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +421,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyncPaste/SyncPaste-Prefix.pch";
 				INFOPLIST_FILE = "SyncPaste/SyncPaste-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SyncPaste/Dependancies\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -418,6 +440,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyncPaste/SyncPaste-Prefix.pch";
 				INFOPLIST_FILE = "SyncPaste/SyncPaste-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SyncPaste/Dependancies\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

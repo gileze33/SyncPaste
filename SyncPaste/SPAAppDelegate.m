@@ -8,6 +8,7 @@
 
 #import "SPAAppDelegate.h"
 #import <Dropbox/Dropbox.h>
+#import "TestFlight.h"
 
 @implementation SPAAppDelegate
 
@@ -16,6 +17,8 @@
     // Override point for customization after application launch.
     
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:24/255.0f green:83/255.0f blue:109/255.0f alpha:1.0f]];
+    
+    [TestFlight takeOff:@"877180c7-5fca-4daa-80fd-b7857065bd62"];
     
     DBAccountManager* accountMgr =
     [[DBAccountManager alloc] initWithAppKey:@"1bk8j66dsextk4j" secret:@"t4bnllw0sso8hq6"];

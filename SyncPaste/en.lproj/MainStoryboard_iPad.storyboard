@@ -1,23 +1,154 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="bn6-he-Xmx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="XGk-8t-N8c">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="bn6-he-Xmx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BP5-J7-8TP">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="5LS-5B-b7A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ROb-2O-WWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1609" y="-454"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="aQK-vq-u82">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="QDn-yo-phV" customClass="SPALoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7JN-3Z-ZDU">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="SyncPasteBGiPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="xmj-CX-MGV"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHB-rc-MQL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NDk-ib-1hi"/>
+                                    <constraint firstAttribute="width" constant="247" id="ax5-1x-xNB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Sign In with Dropbox">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedLogin:" destination="QDn-yo-phV" eventType="touchUpInside" id="h8A-PY-HPo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SyncPaste uses your Dropbox account to allow you to copy and paste between all your devices" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="271" translatesAutoresizingMaskIntoConstraints="NO" id="fqZ-LI-4Ei">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="FFT-Tl-UOq"/>
+                                    <constraint firstAttribute="width" constant="271" id="S3U-NF-03q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1739130435" green="0.1739130435" blue="0.1739130435" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="0.0"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SyncPaste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWl-jQ-2bB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="aul-7M-kaS"/>
+                                    <constraint firstAttribute="width" constant="198" id="bPL-aW-GYw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gHB-rc-MQL" firstAttribute="centerX" secondItem="xmj-CX-MGV" secondAttribute="centerX" type="default" id="0ak-TA-I2z"/>
+                            <constraint firstItem="xmj-CX-MGV" firstAttribute="top" secondItem="7JN-3Z-ZDU" secondAttribute="top" type="default" id="9Ku-CE-DCX"/>
+                            <constraint firstItem="fqZ-LI-4Ei" firstAttribute="centerX" secondItem="gHB-rc-MQL" secondAttribute="centerX" type="default" id="CdT-PQ-5nJ"/>
+                            <constraint firstItem="gHB-rc-MQL" firstAttribute="centerX" secondItem="lWl-jQ-2bB" secondAttribute="centerX" type="default" id="D4S-Lr-g1s"/>
+                            <constraint firstItem="xmj-CX-MGV" firstAttribute="leading" secondItem="7JN-3Z-ZDU" secondAttribute="leading" type="default" id="PfB-sK-NGj"/>
+                            <constraint firstAttribute="bottom" secondItem="fqZ-LI-4Ei" secondAttribute="bottom" constant="310" id="TDk-5i-a3d"/>
+                            <constraint firstAttribute="bottom" secondItem="gHB-rc-MQL" secondAttribute="bottom" constant="405" id="aC8-VX-0fC"/>
+                            <constraint firstItem="lWl-jQ-2bB" firstAttribute="top" secondItem="7JN-3Z-ZDU" secondAttribute="top" constant="309" id="h6E-nd-Kvy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgi-f1-Ow1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1030" y="769"/>
+        </scene>
+        <!--View Controller - SyncPaste-->
         <scene sceneID="4">
             <objects>
                 <viewController id="2" customClass="SPAViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                    <view key="view" contentMode="scaleToFill" id="Rj0-g9-ax1">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="C4a-mW-DI2">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="B8L-0D-007"/>
+                                    <outlet property="delegate" destination="2" id="EyJ-5f-2vz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C4a-mW-DI2" firstAttribute="top" secondItem="Rj0-g9-ax1" secondAttribute="top" type="default" id="Uv3-pR-u3P"/>
+                            <constraint firstItem="C4a-mW-DI2" firstAttribute="bottom" secondItem="Rj0-g9-ax1" secondAttribute="bottom" type="default" id="h6N-gB-ozl"/>
+                            <constraint firstItem="C4a-mW-DI2" firstAttribute="leading" secondItem="Rj0-g9-ax1" secondAttribute="leading" type="default" id="r6g-J5-3aY"/>
+                            <constraint firstItem="C4a-mW-DI2" firstAttribute="trailing" secondItem="Rj0-g9-ax1" secondAttribute="trailing" type="default" id="zHT-e8-t2j"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="SyncPaste" id="tFx-Pd-ex0">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="OO8-zI-a3G">
+                            <connections>
+                                <action selector="pressedAdd:" destination="2" id="bEn-Bf-Imx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="NHg-Ro-RlV">
+                            <connections>
+                                <action selector="pressedEdit:" destination="2" id="oxE-IT-VMY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="C4a-mW-DI2" id="aBy-rf-fgL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="SyncPasteBGiPad.png" width="768" height="1004"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SPALoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SPALoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressedLogin:"/>
+            </relationships>
+        </class>
+        <class className="SPAViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SPAViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressedAdd:"/>
+                <relationship kind="action" name="pressedEdit:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

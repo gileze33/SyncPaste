@@ -9,6 +9,7 @@
 #import "SPAViewController.h"
 #import "SPALoginViewController.h"
 #import "WBSuccessNoticeView.h"
+#import "WBErrorNoticeView.h"
 
 @interface SPAViewController ()
 
@@ -92,8 +93,10 @@
     }
     else {
         NSLog(@"No data");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No data in clipboard" message:@"Copy some text from another app and then press the + button" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
-        [alert show];
+        /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No data in clipboard" message:@"Copy some text from another app and then press the + button" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+        [alert show];*/
+        WBErrorNoticeView *notice = [WBErrorNoticeView errorNoticeInView:self.view title:@"Clipboard Empty" message:@"You need to copy some text into your clipboard from another app first!"];
+        [notice show];
     }
 }
 

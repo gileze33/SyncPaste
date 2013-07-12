@@ -118,9 +118,9 @@
                                 <action selector="pressedAdd:" destination="36M-Bc-UYG" id="GuY-sQ-TCJ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Logout" id="Akh-xf-9kz">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Edit" id="Akh-xf-9kz">
                             <connections>
-                                <action selector="pressedLogout:" destination="36M-Bc-UYG" id="k0c-te-bxM"/>
+                                <action selector="pressedEdit:" destination="36M-Bc-UYG" id="QxV-0Q-ObJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -134,27 +134,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SyncPasteBG.png" width="320" height="480"/>
+        <image name="SyncPasteBG.png" width="320" height="568"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SPALoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SPALoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressedLogin:"/>
-            </relationships>
-        </class>
-        <class className="SPAViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SPAViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressedAdd:"/>
-                <relationship kind="action" name="pressedLogout:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

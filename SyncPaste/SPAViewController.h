@@ -13,6 +13,7 @@
 
 @property bool firstAppear;
 @property bool loggedIn;
+@property bool editing;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl *refresh;
 @property (retain) DBDatastore *dataStore;
@@ -20,6 +21,6 @@
 @property (retain) NSArray *clips;
 
 - (IBAction)pressedAdd:(id)sender;
-- (IBAction)pressedLogout:(id)sender;
+- (IBAction)pressedEdit:(id)sender;
 
 @end

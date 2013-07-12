@@ -23,17 +23,19 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.firstAppear = YES;
     self.loggedIn = NO;
+    self.editing = NO;
     self.clips = [[NSArray alloc] init];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginStateChanged) name:@"loginStateChanged" object:nil];
-    
-    self.refresh = [[UIRefreshControl alloc] init];
-    [self.refresh addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:self.refresh];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     if(self.firstAppear) {
+        
+        self.refresh = [[UIRefreshControl alloc] init];
+        [self.refresh addTarget:self action:@selector(reload) forControlEvents:UIControlEventValueChanged];
+        [self.tableView addSubview:self.refresh];
+        
         DBAccount *account = [[DBAccountManager sharedManager] linkedAccount];
         if (account) {
             NSLog(@"App already linked yah");
@@ -59,6 +61,7 @@
 - (void)loginStateChanged {
     DBAccount *account = [[DBAccountManager sharedManager] linkedAccount];
     if (account) {
+        [self.refresh beginRefreshing];
         self.loggedIn = YES;
         self.dataStore = [DBDatastore openDefaultStoreForAccount:account error:nil];
         self.clipTbl = [self.dataStore getTable:@"clips"];
@@ -78,9 +81,42 @@
     if(self.loggedIn) {
         [self.dataStore sync:nil];
         self.clips = [self.clipTbl query:@{  } error:nil];
+        //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+            [self.tableView reloadData];
+            [self.refresh endRefreshing];
+  //      });
     }
-    [self.tableView reloadData];
-    [self.refresh endRefreshing];
+    else {
+        [self.tableView reloadData];
+        [self.refresh endRefreshing];
+    }
+}
+
+- (NSString *)formattedDate:(NSDate *)date
+{
+    NSTimeInterval timeSinceDate = [[NSDate date] timeIntervalSinceDate:date];
+    
+    // print up to 24 hours as a relative offset
+    if(timeSinceDate < 24.0 * 60.0 * 60.0)
+    {
+        int hoursSinceDate = (timeSinceDate / (60.0 * 60.0));
+        int minutesSinceDate;
+        switch(hoursSinceDate)
+        {
+            default: return [NSString stringWithFormat:@"%ih", hoursSinceDate];
+            case 1: return @"1h";
+            case 0:
+                minutesSinceDate = (timeSinceDate / 60.0);
+                return [NSString stringWithFormat:@"%im", minutesSinceDate];
+                /* etc, etc */
+                break;
+        }
+    }
+    else
+    {
+        /* normal NSDateFormatter stuff here */
+        return @"meh";
+    }
 }
 
 - (IBAction)pressedAdd:(id)sender {
@@ -100,8 +136,8 @@
     }
 }
 
-- (IBAction)pressedLogout:(id)sender {
-    self.loggedIn = NO;
+- (IBAction)pressedEdit:(id)sender {
+    /*self.loggedIn = NO;
     self.dataStore = nil;
     self.clipTbl = nil;
     self.clips = [[NSArray alloc] init];
@@ -114,7 +150,18 @@
     SPALoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
     [self presentViewController:loginVC animated:YES completion:^{
         
-    }];
+    }];*/
+    
+    if(!self.editing) {
+        self.editing = YES;
+        [sender setTitle:@"Done"];
+        [self.tableView setEditing:YES animated:YES];
+    }
+    else {
+        self.editing = NO;
+        [sender setTitle:@"Edit"];
+        [self.tableView setEditing:NO animated:YES];
+    }
 }
 
 
@@ -132,6 +179,20 @@
     return 0;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(editingStyle == UITableViewCellEditingStyleDelete) {
+        if(indexPath.row < self.clips.count) {
+            DBRecord *clip = [self.clips objectAtIndex:indexPath.row];
+            [clip deleteRecord];
+            [self.dataStore sync:nil];
+            NSMutableArray *newClips = [NSMutableArray arrayWithArray:self.clips];
+            [newClips removeObjectAtIndex:indexPath.row];
+            self.clips = newClips;
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        }
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ClipCell"];
     
@@ -147,8 +208,28 @@
         }
         
         NSDate *created = (NSDate *)clip[@"created"];
-        long timestamp_diff = abs([created timeIntervalSinceNow]);
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%li", timestamp_diff];
+        long timeSinceDate = abs([created timeIntervalSinceNow]);
+        NSString *dateStr = @"";
+        if(timeSinceDate < 24.0 * 60.0 * 60.0) {
+            int hoursSinceDate = (timeSinceDate / (60.0 * 60.0));
+            int minutesSinceDate;
+            switch(hoursSinceDate)
+            {
+                default: dateStr = [NSString stringWithFormat:@"%ih", hoursSinceDate];
+                case 1: dateStr =  @"1h";
+                case 0:
+                    minutesSinceDate = (timeSinceDate / 60.0);
+                    dateStr = [NSString stringWithFormat:@"%im", minutesSinceDate];
+                    /* etc, etc */
+                    break;
+            }
+        }
+        else {
+            int daysSinceDate = (timeSinceDate / (24.0 * 60.0 * 60.0));
+            dateStr = [NSString stringWithFormat:@"%id", daysSinceDate];
+        }
+        
+        cell.detailTextLabel.text = dateStr;
     }
     
     return cell;
